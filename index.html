@@ -19,15 +19,63 @@
             font-family: sans-serif;
         }
 
-        body {
+        main {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 1.5rem;
+        }
+
+        .navbar {
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo {
+            height: 100%;
+            width: auto;
+        }
+
+        .navbar-links {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        .navbar-links li {
+            list-style: none;
+        }
+
+        .navbar-links li a {
+            text-decoration: none;
+            color: #474747;
+            font-size: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .navbar-links li a:hover {
+            color: #F2E12C;
+            background-color: #3A91F5;
+        }
+
+        .subscribe {
+            padding: 5rem 0 7rem 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
+        .subscribe-title {
+            text-align: center;
+        }
+
         img {
-            max-width: 20rem;
+            max-width: 100%;
             height: auto;
         }
 
@@ -48,12 +96,27 @@
             /* default for large screens */
         }
 
+        .logo {
+            max-width: 30%;
+        }
+
         /* For screens narrower than 500px */
         @media (max-width: 600px) {
+            main {
+                padding: 1rem;
+            }
+
+            .navbar-links {
+                display: none;
+            }
+
             form {
                 flex-direction: column;
                 align-items: stretch;
-                padding: 0 1rem;
+            }
+
+            .logo {
+                max-width: 60%;
             }
         }
 
@@ -92,21 +155,223 @@
             padding: 0.5rem 1rem;
             font-weight: bold;
         }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3A91F5;
+            color: #F2E12C;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            gap: 1rem;
+        }
+
+        .about-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .person-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .person-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            width: 20%;
+        }
+
+        .person-text {
+            color: #474747;
+            display: flex;
+            flex-direction: column;
+            padding-left: 1rem;
+            width: 80%;
+        }
+
+        .person-text-subtitle {
+            font-weight: 400;
+            padding-bottom: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .person-image {
+                width: 35%;
+            }
+
+            .person-text {
+                width: 65%;
+            }
+        }
+
+        .top {
+            color: white;
+            text-decoration: none;
+        }
+
+        .top:hover {
+            text-decoration: underline;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem 0;
+        }
+
+        footer {
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .mission-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .mission-images {
+            text-align: center;
+        }
+
+        .mission-image {
+            max-height: 20rem;
+        }
+
+        .mission-text {
+            padding-top: 1rem;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .contact-text {
+            max-width: 600px;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <img src="logo.png" alt="My Logo" />
-    <h1>Come Discover Your Voice!</h1>
-    <form method="POST" action="https://present-day-dev-83d4af198380.herokuapp.com/submit">
-        <div class="form-group">
-            <label for="inputValue">Email</label>
-            <input type="text" name="inputValue" placeholder="Enter something..." required />
-            <input type="hidden" name="tableName" value="uwscc_email_list" />
-            <input type="text" name="honeypot" style="display: none;" tabindex="-1" autocomplete="off" />
-        </div>
-        <button type="submit">Join The Waitlist</button>
-    </form>
+    <main>
+        <section id="home" class="navbar">
+            <img class="navbar-logo" src="logo.png" alt="My Logo" />
+            <ul class="navbar-links">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#who-we-are">Who We Are</a>
+                </li>
+                <li>
+                    <a href="#our-mission">Our Mission</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+                
+            </ul>
+        </section>
+        <section class="subscribe">
+            <img class="logo" src="logo.png" alt="My Logo" />
+            <h1 class="subscribe-title">Come Discover Your Voice!</h1>
+            <form method="POST" action="https://present-day-dev-83d4af198380.herokuapp.com/submit">
+                <div class="form-group">
+                    <label for="inputValue">Email</label>
+                    <input type="text" name="inputValue" placeholder="Enter your email" required />
+                    <input type="hidden" name="tableName" value="uwscc_email_list" />
+                    <input type="text" name="honeypot" style="display: none;" tabindex="-1" autocomplete="off" />
+                </div>
+                <button type="submit">Join The Waitlist</button>
+            </form>
+        </section>
+        <section id="who-we-are" class="about">
+            <header>
+                <h2>Who We Are</h2>
+                <a href="#home" class="top">Top</a>
+            </header>
+            <div class="about-content">
+                <div class="person-container">
+                    <div class="person-image">
+                        <img src="grace.jpg" alt="Daniel">
+                    </div>
+                    <div class="person-text">
+                        <h2 class="person-text-title">Grace Morgan</h2>
+                        <h3 class="person-text-subtitle">Co-Founder / Co-Director</h3>
+                        <p>Grace Morgan is a passionate musical theatre artist and educator, best known for her years touring the country as Christine in The Phantom of the Opera. With a deep love for storytelling through song, Grace brings Broadway experience, heartfelt artistry, and a nurturing spirit to every room she enters.
+                        </p><br />
+                        <p>In addition to her performing career, Grace is an acting and voice coach with Broadway Vocal Coach, where she helps students—especially those preparing for college musical theatre programs—take their next big step with confidence and clarity. She has also worked extensively in childcare, both as a freelance babysitter on the Upper West Side and through agencies across NYC. As a mother to two young boys, Grace brings a unique blend of professional insight and personal care to her work with children and families, making her a beloved teacher and mentor.</p>
+                    </div>
+                </div>
+                <div class="person-container">
+                    <div class="person-image">
+                        <img src="daniel.jpg" alt="Daniel">
+                    </div>
+                    <div class="person-text">
+                        <h2 class="person-text-title">Daniel Berryman</h2>
+                        <h3 class="person-text-subtitle">Co-Founder / Co-Director</h3>
+                        <p>Daniel Berryman is the co-founder and director of The West Side Youth Chorus. A professional singer with over 20 years of training and experience, Daniel has performed across a wide range of styles—from musical theatre and pop to classical and opera. He’s sung everything from The Beatles and Paul Simon to Sondheim and Puccini, bringing both versatility and heart to every performance.</p>
+                        <br />
+                        <p>The inspiration to start this choir began with singing to his own children as babies. For Daniel, singing is a basic human activity—one that brings connection, joy, and healing. Through this choir, his hope is to rekindle the act of singing together for children and families in his community and beyond, creating a space where music becomes a shared, enriching part of everyday life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="our-mission" class="about">
+            <header>
+                <h2>Our Mission</h2>
+                <a href="#home" class="top">Top</a>
+            </header>
+            <div class="mission-content">
+                <img class="mission-image" src="fam2.jpg" alt="berryman-family-2">
+                <p class="mission-text">
+                    The Upper West Side Children's Choir is a for-profit local choir that provides a safe and supportive environment for children to explore their voices and express themselves through music.
+                </p>
+            </div>
+        </section>
+        <section id="contact" class="about">
+            <header>
+                <h2>Contact</h2>
+                <a href="#home" class="top">Top</a>
+            </header>
+            <div class="contact-content">
+                <!-- <p>Email us at <a href="mailto:hello@uwscc.com">hello@uwscc.com</a></p> -->
+                <p class="contact-text">Join the WAITLIST! We're currently working all the details out. Please join to be the first to know when we launch!</p>
+                <form method="POST" action="https://present-day-dev-83d4af198380.herokuapp.com/submit">
+                    <div class="form-group">
+                        <label for="inputValue">Email</label>
+                        <input type="text" name="inputValue" placeholder="Enter your email" required />
+                        <input type="hidden" name="tableName" value="uwscc_email_list" />
+                        <input type="text" name="honeypot" style="display: none;" tabindex="-1" autocomplete="off" />
+                    </div>
+                    <button type="submit">Join The Waitlist</button>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <p class="footer-content">
+                &copy; 2025 Upper West Side Children's Choir. All rights reserved.
+            </p>
+        </footer>
+    </main>
 </body>
 
 </html>
