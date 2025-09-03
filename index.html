@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="https://www.uwschildrenschoir.com/logo.png">
     <meta property="og:title" content="Upper West Side Children's Choir">
-    <meta property="og:description" content="A joyful children's choir helping young singers grow in confidence, musicality, and community.">
+    <meta property="og:description"
+        content="A joyful children's choir helping young singers grow in confidence, musicality, and community.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.uwschildrenschoir.com">
 
@@ -53,19 +54,19 @@
             gap: 1rem;
         }
 
-        .navbar-links li {
+        .navbar-links li, .signup-link {
             list-style: none;
         }
 
-        .navbar-links li a {
+        .navbar-links li a, .signup-link a {
             text-decoration: none;
             color: #474747;
             font-size: 1rem;
             padding: 1rem;
             border-radius: 0.5rem;
         }
-        
-        .navbar-links li a:hover {
+
+        .navbar-links li a:hover, .signup-link a {
             color: #F2E12C;
             background-color: #3A91F5;
         }
@@ -284,7 +285,7 @@
             <img class="navbar-logo" src="logo.png" alt="My Logo" />
             <ul class="navbar-links">
                 <li>
-                    <a href="#home">Home</a>
+                    <a href="signup.html">Sign Up</a>
                 </li>
                 <li>
                     <a href="#who-we-are">Who We Are</a>
@@ -295,13 +296,20 @@
                 <li>
                     <a href="#contact">Contact</a>
                 </li>
-                
+
             </ul>
         </section>
-        <section class="subscribe">
+        <section class="subscribe">            
             <img class="logo" src="logo.png" alt="My Logo" />
             <h1 class="subscribe-title">Come Discover Your Voice!</h1>
-            <form method="POST" action="https://present-day-dev-83d4af198380.herokuapp.com/submit">
+
+            <div class="signup-link">
+                <a href="signup.html" style="padding-left: 5rem; padding-right: 5rem; font-weight: bold; font-size: large; color: white; text-decoration: underline;">
+                    SIGN UP TODAY!
+                </a>
+            </div>
+
+            <!-- <form method="POST" action="https://present-day-dev-83d4af198380.herokuapp.com/submit">
                 <div class="form-group">
                     <label for="inputValue">Email</label>
                     <input type="text" name="inputValue" placeholder="Enter your email" required />
@@ -309,7 +317,7 @@
                     <input type="text" name="honeypot" style="display: none;" tabindex="-1" autocomplete="off" />
                 </div>
                 <button type="submit">Join The Waitlist</button>
-            </form>
+            </form> -->
         </section>
         <section id="who-we-are" class="about">
             <header>
@@ -324,9 +332,18 @@
                     <div class="person-text">
                         <h2 class="person-text-title">Grace Morgan</h2>
                         <h3 class="person-text-subtitle">Co-Founder / Co-Director</h3>
-                        <p>Grace Morgan is a passionate musical theatre artist and educator, best known for her years touring the country as Christine in The Phantom of the Opera. With a deep love for storytelling through song, Grace brings Broadway experience, heartfelt artistry, and a nurturing spirit to every room she enters.
+                        <p>Grace Morgan is a passionate musical theatre artist and educator, best known for her years
+                            touring the country as Christine in The Phantom of the Opera. With a deep love for
+                            storytelling through song, Grace brings Broadway experience, heartfelt artistry, and a
+                            nurturing spirit to every room she enters.
                         </p><br />
-                        <p>In addition to her performing career, Grace is an acting and voice coach with Broadway Vocal Coach Aspire, where she helps students—especially those preparing for college musical theatre programs—take their next big step with confidence and clarity. She has also worked extensively in childcare, both as a freelance babysitter on the Upper West Side and through agencies across NYC. As a mother to two young boys, Grace brings a unique blend of professional insight and personal care to her work with children and families, making her a beloved teacher and mentor.</p>
+                        <p>In addition to her performing career, Grace is an acting and voice coach with Broadway Vocal
+                            Coach Aspire, where she helps students—especially those preparing for college musical
+                            theatre programs—take their next big step with confidence and clarity. She has also worked
+                            extensively in childcare, both as a freelance babysitter on the Upper West Side and through
+                            agencies across NYC. As a mother to two young boys, Grace brings a unique blend of
+                            professional insight and personal care to her work with children and families, making her a
+                            beloved teacher and mentor.</p>
                     </div>
                 </div>
                 <div class="person-container">
@@ -336,9 +353,17 @@
                     <div class="person-text">
                         <h2 class="person-text-title">Daniel Berryman</h2>
                         <h3 class="person-text-subtitle">Co-Founder / Co-Director</h3>
-                        <p>Daniel Berryman is a professional singer with 20 years of experience. He sings a wide variety of styles. He has performed musical theatre across the country and in NYC. With Greenburg Artists, he has sung pop music like The Beatles and Paul Simon with symphonies nationwide. He won the 2019 Lotte Lenya Vocal Competition and is now working with a local opera company in NYC, actively pursuing a career in opera.</p>
+                        <p>Daniel Berryman is a professional singer with 20 years of experience. He sings a wide variety
+                            of styles. He has performed musical theatre across the country and in NYC. With Greenburg
+                            Artists, he has sung pop music like The Beatles and Paul Simon with symphonies nationwide.
+                            He won the 2019 Lotte Lenya Vocal Competition and is now working with a local opera company
+                            in NYC, actively pursuing a career in opera.</p>
                         <br />
-                        <p>The inspiration to start this choir began with singing to his own children as babies. For Daniel, singing is a basic human activity—one that brings connection, joy, and healing. Through this choir, his hope is to rekindle the act of singing together for children and families in his community and beyond, creating a space where music becomes a shared, enriching part of everyday life.</p>
+                        <p>The inspiration to start this choir began with singing to his own children as babies. For
+                            Daniel, singing is a basic human activity—one that brings connection, joy, and healing.
+                            Through this choir, his hope is to rekindle the act of singing together for children and
+                            families in his community and beyond, creating a space where music becomes a shared,
+                            enriching part of everyday life.</p>
                     </div>
                 </div>
             </div>
@@ -351,7 +376,8 @@
             <div class="mission-content">
                 <img class="mission-image" src="fam2.png" alt="berryman-family-2">
                 <p class="mission-text">
-                    The Upper West Side Children's Choir is a local choir that provides a safe and supportive environment for children to explore their voices and express themselves through music.
+                    The Upper West Side Children's Choir is a local choir that provides a safe and supportive
+                    environment for children to explore their voices and express themselves through music.
                 </p>
             </div>
         </section>
@@ -362,7 +388,6 @@
             </header>
             <div class="contact-content">
                 <!-- <p>Email us at <a href="mailto:hello@uwscc.com">hello@uwscc.com</a></p> -->
-                <p class="contact-text">Join the WAITLIST! We're currently working all the details out. Please join to be the first to know when we launch!</p>
                 <form method="POST" action="https://present-day-dev-83d4af198380.herokuapp.com/submit">
                     <div class="form-group">
                         <label for="inputValue">Email</label>
@@ -370,7 +395,7 @@
                         <input type="hidden" name="tableName" value="uwscc_email_list" />
                         <input type="text" name="honeypot" style="display: none;" tabindex="-1" autocomplete="off" />
                     </div>
-                    <button type="submit">Join The Waitlist</button>
+                    <button type="submit">Join Our Email List</button>
                 </form>
             </div>
         </section>

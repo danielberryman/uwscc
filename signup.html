@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="https://www.uwschildrenschoir.com/logo.png">
+    <meta property="og:title" content="Register – Upper West Side Children's Choir">
+    <meta property="og:description"
+        content="Sign up to join the Upper West Side Children's Choir – a joyful, confidence-building community for young singers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.uwschildrenschoir.com/register.html">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>Register – Upper West Side Children's Choir</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 1.5rem;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            color: #474747;
+        }
+
+        header {
+            background-color: #3A91F5;
+            color: #F2E12C;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2,
+        h3 {
+            color: #3A91F5;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            padding-left: 1.25rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #3A91F5;
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 2rem;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #2e74c7;
+        }
+
+        .form-container {
+            margin-top: 2rem;
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+            color: #3A91F5;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.875rem;
+            color: #999;
+        }
+
+        a.back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #3A91F5;
+        }
+
+        a.back-link:hover {
+            text-decoration: underline;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin: 12px 0 6px;
+        }
+
+        .price .amt {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .price .per {
+            color: var(--muted)
+        }
+
+        .note {
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--stripe);
+            color: var(--ink);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: .9rem;
+        }
+
+        /* Details toggle styled as a button */
+        details {
+            border: 1px solid #e6ecff;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            margin-top: 16px;
+        }
+
+        summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            background: #f9fbff;
+        }
+
+        summary::-webkit-details-marker {
+            display: none
+        }
+
+        .chev {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            border-right: 2px solid var(--ink);
+            border-bottom: 2px solid var(--ink);
+            transform: rotate(45deg);
+            transition: transform .25s ease;
+            margin-left: auto;
+            opacity: .6;
+        }
+
+        details[open] .chev {
+            transform: rotate(-135deg);
+        }
+
+        .breakdown {
+            padding: 12px 16px 6px;
+            background: #fff;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e9eefc;
+        }
+
+        .row:last-child {
+            border-bottom: none
+        }
+
+        .label {
+            font-weight: 600
+        }
+
+        .sub {
+            color: var(--muted);
+            font-weight: 500
+        }
+
+        .amount {
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .incl {
+            color: var(--ok);
+            font-weight: 800
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: var(--stripe);
+            font-weight: 800;
+            border-top: 1px solid #e6ecff;
+        }
+
+        .fine {
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        /* Mobile */
+        @media (max-width:560px) {
+            .card {
+                padding: 18px
+            }
+
+            .price .amt {
+                font-size: 1.75rem
+            }
+        }
+
+        .options {
+            margin: 8px 0 14px 18px;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #222;
+        }
+
+        .options li {
+            margin: 6px 0;
+        }
+
+        .discount {
+            color: var(--ok);
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="back-link"><a href="index.html">&larr; Back to Home</a></p>
+
+    <header>
+        <h3 style="margin: 0; color: #F2E12C;"><strong>Upper West Side Children's Choir</strong></h3>
+        <h1 style="margin: 0;">SIGN UP</h1>
+    </header>
+
+    <section style="text-align: center; padding: 3rem 0; border-bottom: 1px solid gray;">
+        <h3 style="margin: 0;">We’re thrilled to announce the launch!</h3>
+        <h3 style="margin: 0;">Let's talk details.</h3>
+    </section>
+
+    <section>
+        <h2>Who?</h2>
+        <p>All elementary school–aged children are welcome!</p>
+        <ul>
+            <li><strong>Grades:</strong> K–5</li>
+            <li><strong>Number of children:</strong> This fall, we’re limiting our program to 20 participants.
+                Enrollment is first come, first served.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>What?</h2>
+        <p>Weekly, 2-hour sessions:</p>
+        <ul>
+            <li><strong>Hour 1 – The Voice:</strong> Exploring the instrument itself and how we relate to it.</li>
+            <li><strong>Hour 2 – The Music:</strong> Singing together and preparing for our performance.</li>
+        </ul>
+        <p>In the final week, families are invited to a special performance, with a professional video provided so you
+            can relax and enjoy the moment.</p>
+    </section>
+
+    <section>
+        <h2>When?</h2>
+        <p>Sundays, 1–3pm for 9 weeks</p>
+        <ul>
+            <li><strong>Start:</strong> September 21st</li>
+            <li><strong>End + Performance:</strong> November 16th (2–3pm)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Where?</h2>
+        <p>Advent Lutheran Church</p>
+        <ul>
+            <li><strong>Address:</strong> 2504 Broadway, New York, NY 10025</li>
+            <li><strong>Cross streets:</strong> 93rd & Broadway</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Tuition & Payment Options</h2>
+        <ul class="options">
+            <li><strong>Full Price:</strong> $900</li>
+            <li><strong>Option 1 - Pay In Full:</strong> $800 <span class="discount">($100 discount!)</span></li>
+            <li><strong>Option 2 - Pay Monthly:</strong> 3 payments of $300</li>
+        </ul>
+
+        <!-- Toggle breakdown (no JS) -->
+        <!-- <details>
+            <summary>
+                See cost breakdown — everything below is included (est. value ≈ $1,900+)
+                <span class="chev" aria-hidden="true"></span>
+            </summary>
+
+            <div class="breakdown">
+                <div class="row">
+                    <div>
+                        <div class="label">Instruction</div>
+                        <div class="sub">18 hours @ $80–$90/hour (Daniel &amp; Grace)</div>
+                    </div>
+                    <div class="amount">$1,440–$1,620</div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="label">Venue &amp; Safety</div>
+                        <div class="sub">Trusted UWS church • locked doors + buzz-in system</div>
+                    </div>
+                    <div class="amount">$250–$400</div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="label">Materials</div>
+                        <div class="sub">Sheet music, rehearsal tracks, learning resources</div>
+                    </div>
+                    <div class="amount">$20–$30</div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="label">Performance Video</div>
+                        <div class="sub">Keepsake video so you can be fully present</div>
+                    </div>
+                    <div class="amount">$150</div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="label">Child Leadership &amp; Care</div>
+                        <div class="sub">Certified babysitter &amp; nanny (10+ yrs) + experienced teachers; parents of
+                            two elementary-aged children</div>
+                    </div>
+                    <div class="amount">$200–$300</div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="label">Community Connection</div>
+                        <div class="sub">Run by fellow parents who care deeply about this neighborhood and its children
+                        </div>
+                    </div>
+                    <div class="amount">Included</div>
+                </div>
+            </div>
+
+            <div class="total">
+                <span><strong>Estimated market value</strong></span>
+                <span><strong>$1,900+ </strong></span>
+            </div>
+            <div class="total">
+                <span>Your tuition</span>
+                <span>$900 (or $800 early pay)</span>
+            </div>
+        </details> -->
+    </section>
+
+    <section>
+        <h2>Tuition Payments</h2>
+        <p>
+            At this time, we are accepting payments through <strong>Venmo</strong>.
+        </p>
+        <ol style="text-align: left; margin: 0 auto; padding-left: 1.2em;">
+            <li>Please scan the QR code below.</li>
+            <li>When entering your payment, include your <strong>name</strong> and <strong>email address</strong> in the message.</li>
+            <li>Within a few hours, we will send you an email with more information to finish your registration.</li>
+        </ol>
+        <img src="qrcode.png" alt="Venmo QR Code" style="max-width: 200px;">
+        <p style="font-size: 0.95em; color: #555;">
+            If paying via Venmo is not convenient, we’d be more than happy to work with you
+            to find an alternative payment method that best suits your family.
+        </p>
+    </section>
+
+    <p class="back-link"><a href="index.html">&larr; Back to Home</a></p>
+
+    <footer>
+        <p class="footer-content">
+            &copy; 2025 Upper West Side Children's Choir. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>
