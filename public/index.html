@@ -128,6 +128,16 @@
     .card .icon { font-size: 2rem; line-height: 1; margin-bottom: 0.75rem; }
     .card p { color: var(--muted); }
 
+    /* Photo row */
+    .photos { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 2.5rem; }
+    .photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+    .photos img:nth-child(2) { transform: translateY(1.5rem); }
+    @media (max-width: 640px) {
+      .photos { grid-template-columns: 1fr 1fr; }
+      .photos img:nth-child(2) { transform: none; }
+      .photos img:first-child { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+    }
+
     /* Story */
     .story { background: var(--blue); color: #fff; }
     .story .eyebrow { color: var(--yellow); }
@@ -251,12 +261,18 @@
           <div class="card"><div class="icon" aria-hidden="true">🙈</div><h3>Shy kids welcome</h3><p>We echo as a group, so no one is put on the spot. Solos are only for kids who want one.</p></div>
           <div class="card"><div class="icon" aria-hidden="true">👀</div><h3>Parents can stay</h3><p>Come watch. You'll probably catch yourself singing along.</p></div>
         </div>
+        <!-- Photo slots: replace img/class-1.jpg, class-2.jpg, class-3.jpg to swap. -->
+        <div class="photos">
+          <img src="img/class-1.jpg" alt="Kids singing and moving in class" loading="lazy">
+          <img src="img/class-2.jpg" alt="Kids singing and moving in class" loading="lazy">
+          <img src="img/class-3.jpg" alt="Kids singing and moving in class" loading="lazy">
+        </div>
       </div>
     </section>
 
     <section class="story" id="how">
       <div class="wrap story-grid">
-        <img src="img/family.jpg" alt="Daniel, Grace and their two boys laughing together" loading="lazy">
+        <img src="img/story.jpg" alt="Daniel, Grace and their two boys laughing together" loading="lazy">
         <div>
           <p class="eyebrow">Our story</p>
           <h2>We tried it. We learned. We made it better.</h2>
