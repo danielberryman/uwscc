@@ -1,22 +1,19 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Serve only public/. Never the project folder: email_list.csv and other
+// private files live there and must not reach the network.
+const PUBLIC_DIR = path.join(__dirname, 'public');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = Number(process.env.PORT) || 3001;
+const HOST = process.env.HOST || '127.0.0.1';
 
-// Serve static files (like index.html) from the current directory
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(PUBLIC_DIR, { dotfiles: 'deny' }));
 
-// Optional: route fallback to index.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.listen(PORT, () => {
-  console.log(`🌐 Server running at http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`uwscc preview at http://${HOST}:${PORT}`);
 });

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upper West Side Children's Choir</title>
+  <meta name="description" content="A singing class for kids in grades K–5 on the Upper West Side. Games, rhythm and real pop choruses. Come try a free class.">
+  <meta property="og:title" content="Upper West Side Children's Choir">
+  <meta property="og:description" content="We help your child know, love, and share their voice. Come try a free class.">
+  <meta property="og:image" content="https://www.uwschildrenschoir.com/img/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.uwschildrenschoir.com">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!--
+    ============================================================
+    EDIT HERE when the space is confirmed.
+    These values fill every date, time and place on the page.
+    ============================================================
+  -->
+  <script>
+    window.CHOIR = {
+      trialLink:   "https://stan.store/danielberryman/p/uwscc--15-hours-1-workshop-copy",
+      januaryLink: "https://stan.store/danielberryman/p/1hour-group-class",
+      trialDates:  "December — dates coming soon",
+      trialTimes:  "Times coming soon",
+      weeklyDay:   "A weekday afternoon, starting the week of January 4",
+      weeklyTimes: "Times coming soon",
+      place:       "Upper West Side — exact room coming soon",
+      email:       "info@uwschildrenschoir.com"
+    };
+  </script>
+
+  <style>
+    :root {
+      --blue: #3A91F5;
+      --blue-deep: #1F6FD1;
+      --yellow: #F2E12C;
+      --ink: #1E2A3B;
+      --muted: #55627A;
+      --paper: #FFFDF5;
+      --card: #FFFFFF;
+      --line: #E8E4D3;
+      --radius: 22px;
+      --head: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
+      --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      color: var(--ink);
+      background: var(--paper);
+      font-size: 1.125rem;
+      line-height: 1.6;
+      padding-bottom: 5.5rem; /* room for the phone sign-up bar */
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--blue-deep); }
+    h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.1; letter-spacing: 0.01em; }
+    h2 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 1rem; }
+    h3 { font-size: 1.5rem; margin-bottom: 0.35rem; }
+    .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+    section { padding: clamp(3.5rem, 9vw, 6rem) 0; }
+    .eyebrow {
+      font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em;
+      font-size: 0.85rem; color: var(--blue-deep); margin-bottom: 0.5rem;
+    }
+    .lead { font-size: 1.25rem; color: var(--muted); max-width: 40rem; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-family: var(--head); font-size: 1.35rem; letter-spacing: 0.02em;
+      text-decoration: none; color: var(--ink); background: var(--yellow);
+      padding: 1rem 1.75rem; border-radius: 999px;
+      box-shadow: 0 5px 0 #C9B90F;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #C9B90F; }
+    .btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #C9B90F; }
+    .btn:focus-visible, .text-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+    .text-link { font-weight: 700; color: inherit; text-underline-offset: 3px; }
+    .cta { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+    .cta small { font-size: 1rem; }
+
+    /* Top bar */
+    .topbar { position: absolute; inset: 0 0 auto 0; z-index: 2; padding: 1rem 0; }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; }
+    .topbar img { width: 72px; height: 72px; }
+    .topbar nav { display: flex; gap: 1.5rem; }
+    .topbar nav a { color: #fff; font-weight: 800; text-decoration: none; }
+    .topbar nav a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero {
+      position: relative; color: #fff; padding: 0;
+      min-height: min(88vh, 760px);
+      display: flex; align-items: flex-end;
+      background: var(--blue-deep) url("img/hero.jpg") center 30% / cover no-repeat;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(31,111,209,0.55) 0%, rgba(31,111,209,0.1) 35%, rgba(20,60,120,0.85) 100%);
+    }
+    .hero .wrap { position: relative; padding: 9rem 0 3.5rem; }
+    .hero h1 { font-size: clamp(2.6rem, 8vw, 4.75rem); max-width: 14ch; margin-bottom: 1rem; }
+    .hero h1 span { color: var(--yellow); }
+    .hero p { font-size: clamp(1.15rem, 2.6vw, 1.4rem); max-width: 34rem; margin-bottom: 1.75rem; font-weight: 600; }
+    .hero .text-link { color: #fff; }
+    .hero .when { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35);
+      padding: 0.3rem 0.9rem; border-radius: 999px; font-weight: 800; font-size: 0.95rem; margin-bottom: 1.25rem; }
+
+    /* Fun strip */
+    .strip { background: var(--yellow); padding: 1.1rem 0; overflow: hidden; }
+    .strip ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 2rem;
+      font-family: var(--head); font-size: 1.3rem; color: var(--ink); }
+    .strip li::before { content: "♪"; margin-right: 0.5rem; color: var(--blue-deep); }
+
+    /* Cards */
+    .grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin-top: 2rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; }
+    .card .icon { font-size: 2rem; line-height: 1; margin-bottom: 0.75rem; }
+    .card p { color: var(--muted); }
+
+    /* Story */
+    .story { background: var(--blue); color: #fff; }
+    .story .eyebrow { color: var(--yellow); }
+    .story-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: center; }
+    .story-grid img { border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; object-position: center 35%; }
+    .story p { font-size: 1.15rem; }
+    .story .split { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin: 1.5rem 0; }
+    .story .split div { background: rgba(255,255,255,0.12); border-radius: 16px; padding: 1rem 1.1rem; font-size: 1rem; }
+    .story .split strong { display: block; font-family: var(--head); font-weight: 400; font-size: 1.25rem; color: var(--yellow); }
+    .story ul { list-style: none; display: grid; gap: 0.9rem; margin-top: 1rem; }
+    .story li { padding-left: 2rem; position: relative; }
+    .story li::before { content: "★"; position: absolute; left: 0; color: var(--yellow); }
+
+    /* Details */
+    .details { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 2rem; }
+    .detail { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
+    .detail .label { font-family: var(--head); color: var(--blue-deep); font-size: 1.4rem; }
+    .detail p { margin-top: 0.4rem; }
+    .detail .fine { color: var(--muted); font-size: 1rem; }
+    .price { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .price .label { color: var(--yellow); }
+    .price .big { font-family: var(--head); font-size: 2.4rem; line-height: 1; margin: 0.4rem 0; }
+    .price .fine { color: #C8D2E4; }
+    .monthly { margin-top: 2.5rem; display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .monthly div { display: flex; gap: 0.75rem; align-items: flex-start; font-weight: 600; }
+    .monthly span { flex: none; display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+      background: var(--yellow); font-family: var(--head); }
+
+    /* Teachers */
+    .teachers { background: #FFF6C8; }
+    .people { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); margin-top: 2rem; }
+    .person { background: var(--card); border-radius: var(--radius); padding: 1.75rem; border: 1px solid var(--line); }
+    .person-head { display: flex; gap: 1.1rem; align-items: center; margin-bottom: 1rem; }
+    .person-head img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: center 20%;
+      border: 4px solid var(--yellow); flex: none; }
+    .person .role { color: var(--blue-deep); font-weight: 800; font-size: 1rem; }
+    .person p { color: var(--muted); }
+    details summary { cursor: pointer; font-weight: 800; color: var(--blue-deep); margin-top: 0.75rem; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: " +"; }
+    details[open] summary::after { content: " –"; }
+    details p { margin-top: 0.75rem; }
+
+    /* Final CTA */
+    .final { background: var(--blue-deep); color: #fff; text-align: center; }
+    .final .cta { align-items: center; }
+    .final .text-link { color: #fff; }
+    .final p { max-width: 34rem; margin: 0 auto 1.75rem; font-size: 1.2rem; }
+
+    footer { padding: 2.5rem 0; text-align: center; color: var(--muted); font-size: 1rem; }
+    footer img { width: 64px; margin: 0 auto 0.75rem; }
+
+    /* Phone sign-up bar */
+    .stickybar {
+      position: fixed; inset: auto 0 0 0; z-index: 10;
+      padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+      background: rgba(255,253,245,0.96); backdrop-filter: blur(8px);
+      border-top: 1px solid var(--line);
+      transform: translateY(110%); transition: transform 0.25s ease;
+    }
+    .stickybar.show { transform: none; }
+    .stickybar .btn { width: 100%; font-size: 1.2rem; padding: 0.85rem 1rem; }
+
+    @media (min-width: 820px) {
+      body { padding-bottom: 0; }
+      .stickybar { display: none; }
+      .story-grid { grid-template-columns: 0.9fr 1.1fr; gap: 4rem; }
+    }
+    @media (max-width: 640px) {
+      .topbar nav { display: none; }
+      .topbar img { width: 60px; height: 60px; }
+      .story .split { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .stickybar { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <a href="#top" aria-label="Upper West Side Children's Choir — home"><img src="img/logo-400.png" alt="Upper West Side Children's Choir logo"></a>
+      <nav aria-label="Sections">
+        <a href="#how">How we teach</a>
+        <a href="#details">Details</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="when" data-fill="trialDates">December — dates coming soon</div>
+      <h1>Come discover <span>your voice!</span></h1>
+      <p>We help your child know, love, and share their voice. A singing class for grades K–5 on the Upper West Side.</p>
+      <div class="cta">
+        <a class="btn" data-link="trialLink" href="https://stan.store/danielberryman/p/uwscc--15-hours-1-workshop-copy">Book a free trial class</a>
+        <small>Already sure? <a class="text-link" data-link="januaryLink" href="https://stan.store/danielberryman/p/1hour-group-class">Join in January</a></small>
+      </div>
+    </div>
+  </header>
+
+  <div class="strip" aria-hidden="true">
+    <ul>
+      <li>Rhythm</li><li>Movement</li><li>Games</li><li>Real pop choruses</li>
+    </ul>
+  </div>
+
+  <main>
+    <section id="class">
+      <div class="wrap">
+        <p class="eyebrow">What a class is like</p>
+        <h2>Think Ninja class, but for singing.</h2>
+        <p class="lead">Kids learn real pop choruses by echoing, clapping and moving. They're too busy having fun to notice how much they're learning.</p>
+        <div class="grid">
+          <div class="card"><div class="icon" aria-hidden="true">🎤</div><h3>Real songs</h3><p>Real pop choruses, not baby songs. We treat kids like real musicians.</p></div>
+          <div class="card"><div class="icon" aria-hidden="true">👏</div><h3>Always moving</h3><p>Clapping, stomping and games. Forty-five minutes, with only a break for water.</p></div>
+          <div class="card"><div class="icon" aria-hidden="true">🙈</div><h3>Shy kids welcome</h3><p>We echo as a group, so no one is put on the spot. Solos are only for kids who want one.</p></div>
+          <div class="card"><div class="icon" aria-hidden="true">👀</div><h3>Parents can stay</h3><p>Come watch. You'll probably catch yourself singing along.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="how">
+      <div class="wrap story-grid">
+        <img src="img/family.jpg" alt="Daniel, Grace and their two boys laughing together" loading="lazy">
+        <div>
+          <p class="eyebrow">Our story</p>
+          <h2>We tried it. We learned. We made it better.</h2>
+          <p>Last fall, we ran our first season with 8 kids, and we watched closely to see what worked.</p>
+          <div class="split">
+            <div><strong>What worked</strong>Games where the kids had real power. When a child's choice changed what happened next, the whole room lit up.</div>
+            <div><strong>What didn't</strong>Anything where the kids sat still, or only followed along.</div>
+          </div>
+          <h3>How we teach now</h3>
+          <ul>
+            <li><b>Repeat after me.</b> I sing, the kids sing it back. No sheet music, no waiting.</li>
+            <li><b>Rhythm in the body.</b> Kids clap, stomp and move to exciting rhythms.</li>
+            <li><b>Everyone gets a turn to lead.</b> Throughout each class, kids take turns in small roles: picking who goes first, giving the starting pitch for a song, or pressing the key on the piano.</li>
+            <li><b>A smaller room.</b> Our first space was big, and focus was hard. This season, we're in a smaller, cozier room, so every kid stays close and engaged.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="details">
+      <div class="wrap">
+        <p class="eyebrow">The details</p>
+        <h2>Start with a free class.</h2>
+        <p class="lead">Come to a free trial in December. If your child loves it, weekly classes start in January.</p>
+        <div class="details">
+          <div class="detail">
+            <div class="label">Who</div>
+            <p>Grades K–5, in two small groups: <b>K–1</b> and <b>grades 2–5</b>.</p>
+          </div>
+          <div class="detail">
+            <div class="label">Free trial</div>
+            <p data-fill="trialDates">December — dates coming soon</p>
+            <p class="fine"><span data-fill="trialTimes">Times coming soon</span>. 45 minutes. Parents stay and watch.</p>
+          </div>
+          <div class="detail">
+            <div class="label">Weekly classes</div>
+            <p data-fill="weeklyDay">A weekday afternoon, starting the week of January 4</p>
+            <p class="fine"><span data-fill="weeklyTimes">Times coming soon</span>. 4 classes a month, 45 minutes each.</p>
+          </div>
+          <div class="detail">
+            <div class="label">Where</div>
+            <p data-fill="place">Upper West Side — exact room coming soon</p>
+          </div>
+          <div class="detail price">
+            <div class="label">Cost</div>
+            <div class="big">Free trial</div>
+            <p>Then $200 a month. Sign up at the trial and your first month is <b>$150</b>.</p>
+            <p class="fine">Join any month. Cancel any time.</p>
+          </div>
+        </div>
+
+        <div class="monthly" aria-label="What you get each month">
+          <div><span>4</span>Weekly classes with a professional singer</div>
+          <div><span>♪</span>A recording of the class, sent to you</div>
+          <div><span>✎</span>A short note: one thing your child did well, one thing to work on</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="teachers" id="teachers">
+      <div class="wrap">
+        <p class="eyebrow">Meet the teachers</p>
+        <h2>Professional singers. Parents too.</h2>
+        <div class="people">
+          <article class="person">
+            <div class="person-head">
+              <img src="img/daniel.jpg" alt="Daniel Berryman" loading="lazy">
+              <div><h3>Daniel Berryman</h3><div class="role">Director</div></div>
+            </div>
+            <p>Daniel Berryman is a professional singer with 20 years of experience in many styles. He has performed musical theatre across the country and in NYC. With Greenburg Artists, he has sung The Beatles and Paul Simon with symphonies nationwide. He won the 2019 Lotte Lenya Vocal Competition and now sings with a local opera company in NYC.</p>
+            <details>
+              <summary>Why he started the choir</summary>
+              <p>The idea for this choir began with singing to his own children as babies. For Daniel, singing is a basic human activity that brings connection, joy and healing. Through this choir, he hopes to bring singing together back to children and families in his community and beyond.</p>
+            </details>
+          </article>
+          <article class="person">
+            <div class="person-head">
+              <img src="img/grace.jpg" alt="Grace Morgan Berryman" loading="lazy">
+              <div><h3>Grace Morgan Berryman</h3><div class="role">Assistant Director</div></div>
+            </div>
+            <p>Grace Morgan Berryman is a musical theatre artist and educator, best known for her years touring the country as Christine in <i>The Phantom of the Opera</i>. She brings Broadway experience, heartfelt artistry and a nurturing spirit to every room she enters.</p>
+            <details>
+              <summary>More about Grace</summary>
+              <p>Grace is an acting and voice coach with Broadway Vocal Coach Aspire, where she helps students, especially those preparing for college musical theatre programs, take their next big step. She has also worked extensively in childcare on the Upper West Side and across NYC. As a mother of two young boys, she brings both professional insight and personal care to her work with children and families.</p>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final" id="contact">
+      <div class="wrap">
+        <h2>Come sing with us!</h2>
+        <p>The first class is free. Bring your child, stay and watch, and see if it's a fit.</p>
+        <div class="cta">
+          <a class="btn" data-link="trialLink" href="https://stan.store/danielberryman/p/uwscc--15-hours-1-workshop-copy">Book a free trial class</a>
+          <small>Already sure? <a class="text-link" data-link="januaryLink" href="https://stan.store/danielberryman/p/1hour-group-class">Join in January</a></small>
+        </div>
+        <p style="margin-top:2.5rem;margin-bottom:0;">Questions? Email us at <a class="text-link" data-fill-email href="mailto:info@uwschildrenschoir.com">info@uwschildrenschoir.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="img/logo-400.png" alt="" loading="lazy">
+    &copy; <span id="year">2026</span> Upper West Side Children's Choir
+  </footer>
+
+  <div class="stickybar" id="stickybar">
+    <a class="btn" data-link="trialLink" href="https://stan.store/danielberryman/p/uwscc--15-hours-1-workshop-copy">Book a free trial class</a>
+  </div>
+
+  <script>
+    (function () {
+      var c = window.CHOIR || {};
+      document.querySelectorAll("[data-fill]").forEach(function (el) {
+        var v = c[el.getAttribute("data-fill")];
+        if (v) el.textContent = v;
+      });
+      document.querySelectorAll("[data-link]").forEach(function (el) {
+        var v = c[el.getAttribute("data-link")];
+        if (v) el.href = v;
+      });
+      document.querySelectorAll("[data-fill-email]").forEach(function (el) {
+        if (c.email) { el.href = "mailto:" + c.email; el.textContent = c.email; }
+      });
+      document.querySelectorAll('a[href^="https://stan.store"]').forEach(function (el) {
+        el.target = "_blank"; el.rel = "noopener";
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Show the phone sign-up bar once the hero button is off screen,
+      // and hide it again when the final button is on screen.
+      var bar = document.getElementById("stickybar");
+      var heroBtn = document.querySelector(".hero .btn");
+      var finalSec = document.getElementById("contact");
+      if ("IntersectionObserver" in window && bar && heroBtn && finalSec) {
+        var heroGone = false, finalSeen = false;
+        var update = function () { bar.classList.toggle("show", heroGone && !finalSeen); };
+        new IntersectionObserver(function (e) { heroGone = !e[0].isIntersecting; update(); }).observe(heroBtn);
+        new IntersectionObserver(function (e) { finalSeen = e[0].isIntersecting; update(); }).observe(finalSec);
+      }
+    })();
+  </script>
+</body>
+</html>
