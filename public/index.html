@@ -404,6 +404,26 @@
       });
       document.getElementById("year").textContent = new Date().getFullYear();
 
+      // Section links scroll without putting #section in the address bar,
+      // so a reload keeps the place the reader scrolled to.
+      var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (ev) {
+          var target = document.getElementById(a.getAttribute("href").slice(1));
+          if (!target) return;
+          ev.preventDefault();
+          target.scrollIntoView({ behavior: calm ? "auto" : "smooth" });
+        });
+      });
+      // A shared link with #section still jumps there once; then the hash is dropped.
+      if (location.hash) {
+        window.addEventListener("load", function () {
+          var t = document.getElementById(location.hash.slice(1));
+          if (t) t.scrollIntoView();
+          history.replaceState(null, "", location.pathname + location.search);
+        });
+      }
+
       // Show the phone sign-up bar once the hero button is off screen,
       // and hide it again when the final button is on screen.
       var bar = document.getElementById("stickybar");
